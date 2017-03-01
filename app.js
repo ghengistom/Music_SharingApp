@@ -31,7 +31,7 @@ mongoose.connect('mongodb://localhost/melomaniac', function(err) {
 //socket io server =======
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
-server.listen(4200); // listen for socket io traffic on port 4200 since app runs on 3000.
+server.listen(9001); // listen for socket io traffic on port 4200 since app runs on 3000.
 //==============================================================================
                           /* Playlist */
 var master_playlist = new Array();
@@ -103,10 +103,6 @@ io.sockets.on('disconnect', function(client) {
 
 
 
-
-
-
-
 //==============================================================================
 
                   /* Ajax GETs and POST repsonses Defined here */
@@ -166,28 +162,6 @@ app.post('/login', function(req, res){
 
 
 //==============================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

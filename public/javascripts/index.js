@@ -10,7 +10,7 @@
 //==============================================================================
 
 // as soon as the client loads the page, establish a sockts connection.
-window.SOCKET = io.connect('http://localhost:4200');
+window.SOCKET = io.connect('http://ec2-52-53-106-96.us-west-1.compute.amazonaws.com:9001');
 
 // cache for search results.
 window.search_cache = new Array();
@@ -53,7 +53,7 @@ var login = function(){
             hideLoginAndRegister();
 
             // connect client to server.
-            socket = io.connect('http://localhost:4200');
+            socket = io.connect('http://ec2-52-53-106-96.us-west-1.compute.amazonaws.com:9001');
 
             // tell all the clients that a new user is logged on.
             socket.emit('new_user', {username: login_username});
